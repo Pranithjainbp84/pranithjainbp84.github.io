@@ -8,13 +8,6 @@ The portfolio site is hosted using **GitHub Pages**, which provides a clean, mod
 
 This website highlights my career, skills, projects, and repositories related to my field. It's designed to serve as an online resume for potential employers, collaborators, or anyone interested in my work.
 
-### Key Sections of the Site:
-- **About Me**: Introduction, career background, and skills.
-- **Interests**: Areas of cybersecurity I specialize in, including **Threat Detection**, **Incident Response**, **Email Deliverability**, and **IAM**.
-- **Tools & Technologies**: Overview of the tools and technologies I use, including **SIEM**, **XDR**, **EDR**, and scripting languages like **Python**, **Bash**, and **PowerShell**.
-- **Repositories**: Links to my repositories for various projects and tools I’ve developed, including **SOC Automation Scripts**, **Detection Playbooks**, and **YARA-Sigma Rules**.
-- **Contact**: How to reach me through **email** and **social media**.
-
 ## 💡 Features
 
 - **Responsive Design**: The website adapts to all screen sizes, providing a seamless experience on desktops, tablets, and mobile devices.
@@ -22,8 +15,18 @@ This website highlights my career, skills, projects, and repositories related to
 - **Easy Navigation**: Intuitive sections with direct links to my projects and social media for easy contact.
 - **Animated Visuals**: Includes relevant animated GIFs and images to make the site more engaging.
 
-## ⚙️ How to Use This Repository
+🔧 Technologies Used
+HTML5: For the structure and content of the website.
+CSS3: For styling and responsive design.
+JavaScript: To handle animations and interactivity.
+GitHub Pages: To host the website online.
+FontAwesome: For icons used in the "Connect" section.
 
-1. Clone this repository to your local machine using the following command:
-   ```bash
-   git clone https://github.com/pranithjainbp84/pranithjain.github.io.git
+🤝 Connect With Me
+Email: pranithjainbp84@gmail.com
+LinkedIn: linkedin.com/in/pranithjain84
+Twitter: x.com/PranithJain84
+GitHub: github.com/pranithjainbp84
+
+📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
