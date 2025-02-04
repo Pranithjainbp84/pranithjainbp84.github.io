@@ -22,11 +22,11 @@ JavaScript: To handle animations and interactivity.
 GitHub Pages: To host the website online.
 FontAwesome: For icons used in the "Connect" section.
 
-🤝 Connect With Me
-**Email**: pranithjainbp84@gmail.com
-**LinkedIn**: linkedin.com/in/pranithjain84
-**Twitter**: x.com/PranithJain84
-**GitHub** github.com/pranithjainbp84
+## 🤝 Connect With Me
+
+- **Email**: pranithjainbp84@gmail.com
+- **LinkedIn**: linkedin.com/in/pranithjain84
+- **Twitter**: x.com/PranithJain84
 
 📝 License
 
