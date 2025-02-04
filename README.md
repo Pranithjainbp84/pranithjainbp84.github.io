@@ -16,11 +16,10 @@ This website highlights my career, skills, projects, and repositories related to
 - **Animated Visuals**: Includes relevant animated GIFs and images to make the site more engaging.
 
 🔧 Technologies Used
-HTML5: For the structure and content of the website.
-CSS3: For styling and responsive design.
-JavaScript: To handle animations and interactivity.
-GitHub Pages: To host the website online.
-FontAwesome: For icons used in the "Connect" section.
+- HTML5: For the structure and content of the website.
+- CSS3: For styling and responsive design.
+- GitHub Pages: To host the website online.
+- FontAwesome: For icons used in the "Connect" section.
 
 ## 🤝 Connect With Me
 
