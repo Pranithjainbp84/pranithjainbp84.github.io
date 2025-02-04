@@ -1,0 +1,31 @@
+.repos {
+  margin-top: 30px;
+}
+
+.repo {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.repo:hover {
+  background-color: #f9f9f9;
+}
+
+.repo h4 a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.repo h4 a:hover {
+  text-decoration: underline;
+}
+
+.repo p {
+  font-size: 1em;
+  color: #555;
+}
