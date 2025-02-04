@@ -1,31 +1,166 @@
-.repos {
-  margin-top: 30px;
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #1e1e1e, #0e0e0e);
+  color: #ccc;
+  margin: 0;
+  padding: 0;
 }
 
-.repo {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+header {
+  text-align: center;
+  color: #fff;
+  padding: 40px;
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  border-bottom: 5px solid #ecf0f1;
 }
 
-.repo:hover {
-  background-color: #f9f9f9;
+header h1 {
+  font-size: 3.5em;
+  margin: 0;
 }
 
-.repo h4 a {
+header h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #bdc3c7;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-gif img {
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+section {
+  margin: 30px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+section h3 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+a {
   color: #3498db;
   text-decoration: none;
-  font-size: 1.5em;
 }
 
-.repo h4 a:hover {
+a:hover {
+  color: #2980b9;
   text-decoration: underline;
 }
 
-.repo p {
-  font-size: 1em;
-  color: #555;
+.repo {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.repo:hover {
+  background-color: #34495e;
+  transform: scale(1.05);
+}
+
+.repo h4 {
+  margin: 0;
+  font-size: 1.3em;
+}
+
+footer {
+  text-align: center;
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+.connect a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 1.2em;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.connect a:hover {
+  background-color: #3498db;
+  text-decoration: none;
+}
+
+/* Add some subtle animation to the page load */
+body {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+  header h2 {
+    font-size: 1.2em;
+  }
+  .repo {
+    margin-bottom: 15px;
+  }
+  section {
+    margin: 15px;
+    padding: 15px;
+  }
+  .intro {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  header h1 {
+    font-size: 2em;
+  }
+  header h2 {
+    font-size: 1.1em;
+  }
+  .connect a {
+    font-size: 1em;
+    padding: 8px;
+  }
 }
