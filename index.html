@@ -5,12 +5,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pranith Jain - SOC Analyst | Cybersecurity Enthusiast</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #1e1e1e, #0e0e0e);
+      color: #ccc;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      color: #fff;
+      padding: 60px;
+      background: linear-gradient(145deg, #2c3e50, #34495e);
+      border-bottom: 5px solid #ecf0f1;
+    }
+    header h1 {
+      font-size: 3.5em;
+      margin: 0;
+    }
+    header h2 {
+      font-size: 1.5em;
+      margin: 10px 0;
+      color: #bdc3c7;
+    }
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .welcome-gif img {
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    }
+    section {
+      margin: 30px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    section h3 {
+      font-size: 2em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .navbar-nav a {
+      color: #fff !important;
+    }
+    .repo, .experience {
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .repo:hover, .experience:hover {
+      background-color: #34495e;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      position: relative;
+      width: 100%;
+      bottom: 0;
+    }
+    .connect a {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 1.2em;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .connect a:hover {
+      background-color: #3498db;
+      text-decoration: none;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    body { animation: fadeIn 1s ease-out; }
+    .fade-in-section {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    /* Responsive Design */
+    @media only screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      header h2 {
+        font-size: 1.2em;
+      }
+      .repo {
+        margin-bottom: 15px;
+      }
+      section {
+        margin: 15px;
+        padding: 15px;
+      }
+    }
+    @media only screen and (max-width: 480px) {
+      header h1 {
+        font-size: 2em;
+      }
+      header h2 {
+        font-size: 1.1em;
+      }
+      .connect a {
+        font-size: 1em;
+        padding: 8px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- Navigation Menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Pranith Jain</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tools">Tools & Technologies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#certificates">Certificates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#repos">Repositories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#connect">Connect</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
   <header>
-    <div class="intro">
+    <div class="intro fade-in-section">
       <h1>🔐 Pranith Jain</h1>
       <h2>SOC Analyst | Cybersecurity Enthusiast | Email Deliverability Expert</h2>
       <div class="welcome-gif">
@@ -19,7 +177,8 @@
     </div>
   </header>
 
-  <section class="about">
+  <!-- About Me Section -->
+  <section id="about" class="fade-in-section">
     <h3>👨‍💻 About Me</h3>
     <p>Welcome! I’m a <strong>SOC Analyst</strong> with a passion for cybersecurity, automation, and threat hunting. I specialize in Email Deliverability, Identity & Access Management (IAM), and Security Operations. My expertise extends across threat detection, SIEM management, and incident response, along with a strong focus on securing email infrastructure and improving deliverability.</p>
     <h4>💡 Interests:</h4>
@@ -32,7 +191,24 @@
     </ul>
   </section>
 
-  <section class="tools">
+  <!-- Experience Section -->
+  <section id="experience" class="fade-in-section">
+    <h3>💼 Experience</h3>
+
+    <div class="experience">
+      <h4>IT Support Specialist | Qubit Capital | Dubai | July 2024 - Present</h4>
+      <p>Providing technical support, managing IT infrastructure, and ensuring smooth operations for Qubit Capital. Responsible for troubleshooting, system maintenance, and enhancing security protocols.</p>
+    </div>
+
+    <div class="experience">
+      <h4>Security Analyst Trainee | Tracelay Networks | Bengaluru | July 2024 - October 2024</h4>
+      <p>Assisted with cybersecurity operations, threat analysis, and incident response. Gained hands-on experience in identifying vulnerabilities and securing networks for Tracelay Networks.</p>
+    </div>
+
+  </section>
+
+  <!-- Tools & Technologies Section -->
+  <section id="tools" class="fade-in-section">
     <h3>🛠 Tools & Technologies</h3>
     <ul>
       <li><strong>SIEM:</strong> Microsoft Azure Sentinel, Sumo Logic</li>
@@ -45,62 +221,68 @@
     </ul>
   </section>
 
-  <section class="repos">
+  <!-- Certificates Section -->
+  <section id="certificates" class="fade-in-section">
+    <h3>📜 Certificates</h3>
+    <ul>
+      <li>Certified Network Security Practitioner (CNSP) | The SecOps Group | 2025</li>
+      <li>ISO 9001 QUALITY MANAGEMENT SKILLFRONT SYSTEMS ASSOCIATE™ | SkillFront | 2025</li>
+      <li>Introduction to OSINT | My OSINT Training | 2025</li>
+      <li>Cybersecurity Internship | The Red Users | 2024</li>
+      <li>Klaviyo Deliverability Certificate | Klaviyo | 2024</li>
+      <li>The Sumo Security Pipeline | Sumo Logic | 2024</li>
+      <li>Fundamentals of Dark Web | SOCRadar® Extended Threat Intelligence | 2024</li>
+      <li>Introduction to Cybersecurity | Cisco | 2024</li>
+      <li>Let's Defend SOC Path | Let's Defend | 2024 - Present</li>
+    </ul>
+  </section>
+
+  <!-- Repositories Section -->
+  <section id="repos" class="fade-in-section">
     <h3>📁 My Repositories</h3>
 
     <div class="repo">
-      <h4><a href="https://github.com/pranithjainbp84/Detection-Response-Playbooks" target="_blank">Detection-Response-Playbooks</a></h4>
+      <h4><a href="https://github.com/pranithjainbp84/Detection-Response-Playbooks" target="_blank" aria-label="Detection-Response-Playbooks Repository">Detection-Response-Playbooks</a></h4>
       <p>A collection of SOC playbooks for handling security incidents such as phishing email analysis, ransomware containment, and more.</p>
     </div>
 
     <div class="repo">
-      <h4><a href="https://github.com/pranithjainbp84/SOC-Automation-Scripts" target="_blank">SOC-Automation-Scripts</a></h4>
+      <h4><a href="https://github.com/pranithjainbp84/SOC-Automation-Scripts" target="_blank" aria-label="SOC-Automation-Scripts Repository">SOC-Automation-Scripts</a></h4>
       <p>Automation scripts for Security Operations Centers (SOC) such as log parsers, threat intelligence feed fetchers, and event log extractors.</p>
     </div>
 
     <div class="repo">
-      <h4><a href="https://github.com/pranithjainbp84/YARA-Sigma-Rules" target="_blank">YARA-Sigma-Rules</a></h4>
+      <h4><a href="https://github.com/pranithjainbp84/YARA-Sigma-Rules" target="_blank" aria-label="YARA-Sigma-Rules Repository">YARA-Sigma-Rules</a></h4>
       <p>Detection rules for SOC monitoring including YARA rules for malware detection and Sigma rules for brute force attack detection.</p>
     </div>
 
     <div class="repo">
-      <h4><a href="https://github.com/pranithjainbp84/CTF-Writeups" target="_blank">CTF-Writeups</a></h4>
+      <h4><a href="https://github.com/pranithjainbp84/CTF-Writeups" target="_blank" aria-label="CTF-Writeups Repository">CTF-Writeups</a></h4>
       <p>Write-ups from Capture The Flag (CTF) competitions and security research to demonstrate my problem-solving skills and cybersecurity knowledge.</p>
     </div>
 
     <div class="repo">
-      <h4><a href="https://github.com/pranithjainbp84/Tracelay-Internship" target="_blank">Tracelay-Internship</a></h4>
+      <h4><a href="https://github.com/pranithjainbp84/Tracelay-Internship" target="_blank" aria-label="Tracelay-Internship Repository">Tracelay-Internship</a></h4>
       <p>Internship project repository showcasing my experience and work done during my internship at Tracelay, focusing on cybersecurity tasks and research.</p>
     </div>
   </section>
 
-  <!-- New Certificate Section -->
-  <section class="certificates">
-    <h3>📜 Certifications</h3>
-    <ul>
-      <li><strong>Certified Network Security Practitioner (CNSP)</strong> | The SecOps Group | 2025</li>
-      <li><strong>ISO 9001 QUALITY MANAGEMENT SKILLFRONT SYSTEMS ASSOCIATE™</strong> | SkillFront | 2025</li>
-      <li><strong>Introduction to OSINT</strong> | My OSINT Training | 2025</li>
-      <li><strong>Cybersecurity Internship</strong> | The Red Users | 2024</li>
-      <li><strong>Klaviyo Deliverability Certificate</strong> | Klaviyo | 2024</li>
-      <li><strong>The Sumo Security Pipeline</strong> | Sumo Logic | 2024</li>
-      <li><strong>Fundamentals of Dark Web</strong> | SOCRadar® Extended Threat Intelligence | 2024</li>
-      <li><strong>Introduction to Cybersecurity</strong> | Cisco | 2024</li>
-      <li><strong>Let's Defend SOC Path</strong> | Let's Defend | 2024 - Present</li>
-    </ul>
-  </section>
-
-  <section class="connect">
+  <!-- Connect Section -->
+  <section id="connect" class="fade-in-section">
     <h3>📬 Connect with Me</h3>
-    <a href="mailto:pranithjainbp84@gmail.com"><i class="fa fa-envelope"></i> Email</a>
-    <a href="https://www.linkedin.com/in/pranithjain84/"><i class="fa fa-linkedin"></i> LinkedIn</a>
-    <a href="https://x.com/PranithJain84"><i class="fa fa-twitter"></i> Twitter</a>
-    <a href="https://app.rezi.ai/s/pranithjain" target="_blank">📄 Resume</a>
+    <a href="mailto:pranithjainbp84@gmail.com" aria-label="Email Pranith Jain"><i class="fa fa-envelope"></i> Email</a>
+    <a href="https://www.linkedin.com/in/pranithjain84/" aria-label="Visit LinkedIn profile"><i class="fa fa-linkedin"></i> LinkedIn</a>
+    <a href="https://x.com/PranithJain84" aria-label="Visit Twitter profile"><i class="fa fa-twitter"></i> Twitter</a>
+    <a href="https://app.rezi.ai/s/pranithjain" target="_blank" aria-label="View my Resume">📄 Resume</a>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Pranith Jain</p>
   </footer>
 
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
