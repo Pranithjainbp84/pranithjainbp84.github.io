@@ -116,6 +116,19 @@ footer {
   text-decoration: none;
 }
 
+/* New Certificate Section Styling */
+.certificates ul li {
+  font-size: 1.1em;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.certificates h3 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
 /* Add some subtle animation to the page load */
 body {
   animation: fadeIn 1s ease-out;
