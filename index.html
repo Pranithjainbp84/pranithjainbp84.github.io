@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pranith Jain | Cybersecurity & MailOps Portfolio</title>
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,400..700,0..1,0..200" rel="stylesheet" />
+  <!-- Material Web Components -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@material/web@1.0.0/dist/material-web.min.js"></script>
+  <style>
+    .material-symbols-outlined {font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align:middle;}
+    :root {--primary:#6750a4;--on-primary:#ffffff;--primary-container:#eaddff;--on-primary-container:#21005d;--secondary-container:#e8def8;--on-secondary-container:#1d192b;--surface:#fef7ff;--on-surface:#1c1b1f;--surface-variant:#e7e0ec;--on-surface-variant:#49454f;--outline:#79747e;--bg:var(--surface);--card-bg:#ffffff;--link:var(--primary);}
+    body.dark {--primary:#d0bcff;--on-primary:#381e72;--primary-container:#4f378b;--on-primary-container:#eaddff;--secondary-container:#4a4458;--on-secondary-container:#e8def8;--surface:#1c1b1f;--on-surface:#e6e1e5;--surface-variant:#49454f;--on-surface-variant:#cac4d0;--outline:#938f99;--bg:var(--surface);--card-bg:#2b2930;--link:var(--primary);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--on-surface);transition:background .3s,color .3s;line-height:1.6;}
+    a{color:var(--link);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    nav{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--outline);z-index:1000;}
+    body.dark nav{background:rgba(28,27,31,.8);}
+    .nav-container{max-width:1140px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;}
+    .nav-brand{display:flex;align-items:center;gap:.4rem;font-weight:700;font-size:1.3rem;color:var(--primary);}
+    .nav-links{display:flex;gap:1rem;}
+    .nav-links a{display:flex;align-items:center;gap:.25rem;padding:.35rem .6rem;border-radius:.5rem;font-weight:500;transition:background .2s;}
+    .nav-links a:hover{background:var(--secondary-container);}
+    .hamburger{display:none;flex-direction:column;gap:.25rem;cursor:pointer;}
+    .hamburger span{width:24px;height:2px;background:var(--on-surface);transition:.3s;}
+    .theme-toggle{cursor:pointer;display:flex;align-items:center;}
+    header{background:linear-gradient(135deg,var(--primary)0%,var(--primary-container)100%);color:var(--on-primary);text-align:center;padding:9rem 1rem 6rem;clip-path:ellipse(150% 100% at 50% 0%);}
+    header h1{font-size:clamp(2.6rem,5vw,3.6rem);margin-bottom:.5rem;}
+    header p{font-size:1.15rem;max-width:760px;margin:0 auto;}
+    .cta{margin-top:2.5rem;}
+    md-filled-tonal-button{--md-filled-tonal-button-container-color:var(--secondary-container);--md-filled-tonal-button-label-text-color:var(--on-secondary-container);}
+    main{max-width:1140px;margin:auto;padding:3rem 1rem;}
+    section{margin-bottom:4rem;}
+    section h2{font-size:1.75rem;margin-bottom:1rem;color:var(--primary);position:relative;}
+    section h2::after{content:'';position:absolute;left:0;bottom:-4px;width:48px;height:3px;background:var(--primary);border-radius:2px;}
+    #about p{max-width:800px;margin:auto;}
+    .skills{display:flex;flex-wrap:wrap;gap:.5rem;}
+    .chip{display:inline-flex;align-items:center;gap:.25rem;background:var(--secondary-container);color:var(--on-secondary-container);padding:.35rem .75rem;border-radius:9999px;font-size:.85rem;}
+    .timeline{border-left:2px solid var(--primary);padding-left:1rem;}
+    .timeline-item{margin-bottom:1.5rem;position:relative;}
+    .timeline-item::before{content:'';position:absolute;left:-9px;top:6px;width:10px;height:10px;background:var(--primary);border-radius:50%;}
+    .timeline-item h3{font-size:1.05rem;margin-bottom:.2rem;}
+    .timeline-item p{font-size:.9rem;color:var(--on-surface-variant);margin:0 .5rem 1rem 0;}
+    .timeline-item span{font-size:.85rem;color:var(--on-surface-variant);}
+    .list{list-style:disc inside;}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
+    .project-card{background:var(--card-bg);border-radius:1rem;padding:1rem;box-shadow:0 3px 6px rgba(0,0,0,.06);display:flex;flex-direction:column;gap:.6rem;transition:transform .2s,box-shadow .2s;}
+    .project-card:hover{transform:translateY(-4px);box-shadow:0 6px 12px rgba(0,0,0,.1);}
+    .project-card h3{font-size:1.05rem;color:var(--primary);display:flex;align-items:center;gap:.3rem;margin:0;}
+    .project-card p{font-size:.9rem;color:var(--on-surface-variant);flex-grow:1;}
+    .project-card a{font-weight:600;}
+    .contact-info{display:flex;flex-direction:column;gap:.8rem;font-size:.95rem;}
+    .contact-info a{display:inline-flex;align-items:center;gap:.3rem;}
+    footer{text-align:center;padding:2.5rem 1rem;background:var(--primary-container);color:var(--on-primary-container);display:flex;flex-direction:column;gap:1rem;align-items:center;}
+    body.dark footer{background:#312f36;color:var(--on-surface-variant);}
+    @media(max-width:768px){
+      .nav-links{position:absolute;top:64px;left:0;width:100%;flex-direction:column;background:var(--bg);padding:1rem 0;display:none;}
+      .nav-links.show{display:flex;}
+      .hamburger{display:flex;}
+    }
+    /* Mobile enhancements */
+    @media(max-width:480px){
+      /* Single-column project cards */
+      .projects-grid { grid-template-columns: 1fr !important; }
+      /* Horizontal scroll for skills chips */
+      .skills { overflow-x: auto; padding-bottom: 0.5rem; }
+      /* Full-width buttons */
+      .cta md-filled-tonal-button { width: 100%; }
+      /* Centered contact links */
+      .contact-info a { width: 100%; padding: 0.5rem 0; justify-content: center; }
+      /* Reduce section padding */
+      main { padding: 2rem 0.5rem; }
+      header { padding: 6rem 1rem 4rem; }
+    }.nav-links.show{display:flex;}.hamburger{display:flex;}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-brand"><span class="material-symbols-outlined">verified_user</span>Pranith Jain</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#about"><span class="material-symbols-outlined">person</span>About</a>
+        <a href="#skills"><span class="material-symbols-outlined">checklist</span>Skills</a>
+        <a href="#experience"><span class="material-symbols-outlined">timeline</span>Experience</a>
+        <a href="#education"><span class="material-symbols-outlined">school</span>Education</a>
+        <a href="#coursework"><span class="material-symbols-outlined">menu_book</span>Coursework</a>
+        <a href="#certifications"><span class="material-symbols-outlined">grade</span>Certifications</a>
+        <a href="#projects"><span class="material-symbols-outlined">folder</span>Projects</a>
+        <a href="#contact"><span class="material-symbols-outlined">alternate_email</span>Hire Me</a>
+        <a href="https://app.rezi.ai/s/pranithjain" target="_blank"><span class="material-symbols-outlined">description</span>Resume</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:.8rem;">
+        <div class="theme-toggle" id="themeToggle"><span class="material-symbols-outlined">dark_mode</span></div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+  <header>
+    <h1>Hi, I'm Pranith Jain</h1>
+    <p>MailOps Specialist & Cloud Security Enthusiast blending deliverability mastery with GenAI-driven automation.</p>
+    <div class="cta"><md-filled-tonal-button href="#contact" label="Let's Connect"></md-filled-tonal-button></div>
+  </header>
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>I believe security shouldn’t merely put out fires—it should fuel growth. That conviction has guided my journey leading MailOps & Email Deliverability at Qubit Capital, where I optimize outreach-domain email deliverability to ensure 500+ investor outreach domains consistently land in recipients’ primary tab. Alongside email operations, I spearhead <strong>Cloud Security</strong> initiatives, implementing GCP IAM policies, enforcing zero-trust controls, and automating vulnerability assessments to secure cloud workloads and infrastructure.</p>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="chip"><span class="material-symbols-outlined">visibility</span>Threat Detection</span>
+        <span class="chip"><span class="material-symbols-outlined">alarm_on</span>Incident Response</span>
+        <span class="chip"><span class="material-symbols-outlined">insights</span>SIEM (Sumo Logic, Elastic)</span>
+        <span class="chip"><span class="material-symbols-outlined">search</span>OSINT & MITRE ATT&CK</span>
+        <span class="chip"><span class="material-symbols-outlined">mail</span>Email Deliverability</span>
+        <span class="chip"><span class="material-symbols-outlined">integration_instructions</span>GCP IAM & 2FA</span>
+        <span class="chip"><span class="material-symbols-outlined">code</span>Python, Bash, SQL</span>
+      </div>
+    </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>IT Support Specialist — Qubit Capital</h3>
+          <span>Jul 2024 – Present · Dubai, UAE</span>
+          <ul>
+            <li>Lead MailOps for 500+ domains, optimizing email deliverability and domain reputation.</li>
+            <li>Managed Postmaster data, enforced DMARC compliance, and maintained proxy infrastructure.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Cloud Security Intern — ZeroRisk Labs</h3>
+          <span>May 2025 – Jul 2025</span>
+          <ul>
+            <li>Implemented GCP Armor policies and automated vulnerability assessments using Python.</li>
+            <li>Developed scripts to streamline security scans and report generation.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Cybersecurity Intern — Hacktify Cyber Security</h3>
+          <span>Feb 2025 – Mar 2025</span>
+          <ul>
+            <li>Performed penetration testing and phishing simulations against client environments.</li>
+            <li>Contributed to SOC playbook development and incident response workflows.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Security Analyst Trainee — Tracelay</h3>
+          <span>Jul 2024 – Oct 2024 · Bengaluru, India</span>
+          <ul>
+            <li>Built SOC playbooks for incident response and threat intelligence integration.</li>
+            <li>Automated log parsing and enrichment pipelines to accelerate investigations.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Junior Support Engineer — GlowTouch Technologies</h3>
+          <span>Sep 2023 – Jul 2024 · Mysuru, India</span>
+          <ul>
+            <li>Provided technical support and managed cPanel servers for enterprise clients.</li>
+            <li>Resolved network and email issues, improving uptime and user satisfaction.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Associate Software Developer — TekWorks</h3>
+          <span>Mar 2023 – Sep 2023 · Vijayawada, India</span>
+          <ul>
+            <li>Developed automation tools in Google Apps Script and Bash to streamline workflows.</li>
+            <li>Created SQL scripts for data extraction and reporting automation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="list">
+        <li>Bachelor of Engineering in Computer Science Engineering | Visvesvaraya Technological University | Bengaluru | 2023 | CGPA: 6.81</li>
+      </ul>
+    </section>
+    <section id="coursework">
+      <h2>Coursework</h2>
+      <ul class="list">
+        <li>GCLP '25 Google Cloud Cybersecurity Scholar SM 2025 | Google Cloud Skills Boost | Cloud Security, IAM</li>
+        <li>SecRavan Cybersecurity Cohort | SOC, CTF Labs | 2025</li>
+        <li>7-Day Offensive Bootcamp | ZeroRisk Labs | Offensive Security, OSINT | 2025</li>
+        <li>OSINTCon 2025 | OSINT Research | 2025</li>
+        <li>PurpleSynapz™ Sept 24 Bootcamp | Intro to Network Security, SOC, SIEM | 2024</li>
+        <li>Security Engineer Learning Path | Google Skill Boost | 2025</li>
+      </ul>
+    </section>
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="list">
+        <li>Proofpoint Certified Email Authentication Specialist | Proofpoint | 2025</li>
+        <li>Certified Network Security Practitioner (CNSP) | The SecOps Group | 2025</li>
+        <li>7-Day Offensive Bootcamp | ZeroRisk Labs | 2025</li>
+        <li>Penetration Testing Internship | Hacktify | 2025</li>
+        <li>Cyber Threat Intelligence 101 | ArcX | 2025</li>
+        <li>AI Foundation™ | AI Certs | 2025</li>
+        <li>AI Security Fundamentals! | Varonis | 2025</li>
+        <li>Certified Multi-Cloud Blue Team Analyst (MCBTA) | Cyberwarfare Labs | 2025</li>
+        <li>Fundamentals of Dark Web | SOCRadar | 2024</li>
+        <li>Foundations of Threat Hunting | Picus Security | 2024</li>
+        <li>The Absolute Guide to MITRE ATT&CK | Picus Security | 2024</li>
+        <li>Introduction to Cybersecurity | Cisco | 2024</li>
+      </ul>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card"><h3><span class="material-symbols-outlined">playbook</span>Detection-Response-Playbooks</h3><p>SOC playbooks for phishing analysis, ransomware containment & more.</p><a href="https://github.com/pranithjainbp84/Detection-Response-Playbooks" target="_blank">View on GitHub →</a></div>
+        <div class="project-card"><h3><span class="material-symbols-outlined">auto_mode</span>SOC-Automation-Scripts</h3><p>Automation scripts for log parsing, threat-intel feed fetching & event extraction.</p><a href="https://github.com/pranithjainbp84/SOC-Automation-Scripts" target="_blank">View on GitHub →</a></div>
+        <div class="project-card"><h3><span class="material-symbols-outlined">rule</span>YARA-Sigma-Rules</h3><p>Detection rules for malware & brute-force attacks.</p><a href="https://github.com/pranithjainbp84/YARA-Sigma-Rules" target="_blank">View on GitHub →</a></div>
+        <div class="project-card"><h3><span class="material-symbols-outlined">flag</span>CTF-Writeups</h3><p>Write-ups from CTF competitions & security research.</p><a href="https://github.com/pranithjainbp84/CTF-Writeups" target="_blank">View on GitHub →</a></div>
+        <div class="project-card"><h3><span class="material-symbols-outlined">science</span>Tracelay-Internship</h3><p>Internship projects & research.</p><a href="https://github.com/pranithjainbp84/Tracelay-Internship" target="_blank">View on GitHub →</a></div>
+        <div class="project-card"><h3><span class="material-symbols-outlined">cloud_sync</span>Cloud Ransomware Detection (GCP)</h3><p>System for GCP-based ransomware detection & recovery.</p><a href="https://github.com/Pranithjainbp84/Cloud-Based-Ransomware-Detection-and-Recovery-System-GCP" target="_blank">View on GitHub →</a></div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Hire Me</h2>
+      <p>If you're looking to fortify deliverability, secure cloud workloads, or build GenAI-driven automations, let's connect!</p>
+      <div class="contact-info">
+        <a href="mailto:pranithjainbp84@gmail.com"><span class="material-symbols-outlined">mail</span>pranithjainbp84@gmail.com</a>
+        <a href="https://www.linkedin.com/in/pranithjain" target="_blank"><span class="material-symbols-outlined">launch</span>linkedin.com/in/pranithjain</a>
+      </div>
+    </section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <div class="cta">
+        <a href="https://app.rezi.ai/s/pranithjain" target="_blank">
+          <md-filled-tonal-button label="View Résumé"></md-filled-tonal-button>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© <span id="year"></span> Pranith Jain • Built with Material You & hosted on GitHub Pages</p>
+  </footer>
+  <script>
+    // Mobile nav
+    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('show'));
+    // Theme toggle
+    const tog=document.getElementById('themeToggle'), bd=document.body;
+    const upd=()=>tog.innerHTML=`<span class="material-symbols-outlined">${bd.classList.contains('dark')?'light_mode':'dark_mode'}</span>`;
+    if(localStorage.theme==='dark'||(!localStorage.theme&&window.matchMedia('(prefers-color-scheme: dark)').matches)) bd.classList.add('dark');
+    upd(); tog.addEventListener('click',()=>{bd.classList.toggle('dark');localStorage.theme=bd.classList.contains('dark')?'dark':'light';upd();});
+    // Year
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
