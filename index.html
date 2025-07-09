@@ -240,15 +240,25 @@
     <p>© <span id="year"></span> Pranith Jain • Built with Material You & hosted on GitHub Pages</p>
   </footer>
   <script>
-    // Mobile nav
-    document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('show'));
-    // Theme toggle
-    const tog=document.getElementById('themeToggle'), bd=document.body;
-    const upd=()=>tog.innerHTML=`<span class="material-symbols-outlined">${bd.classList.contains('dark')?'light_mode':'dark_mode'}</span>`;
-    if(localStorage.theme==='dark'||(!localStorage.theme&&window.matchMedia('(prefers-color-scheme: dark)').matches)) bd.classList.add('dark');
-    upd(); tog.addEventListener('click',()=>{bd.classList.toggle('dark');localStorage.theme=bd.classList.contains('dark')?'dark':'light';upd();});
-    // Year
-    document.getElementById('year').textContent=new Date().getFullYear();
+    window.onload = function() {
+      document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('show'));
+      const switchEl = document.getElementById('modeSwitch');
+      if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.classList.add('dark');
+        switchEl.checked = true;
+      }
+      switchEl.addEventListener('change', () => {
+        if (switchEl.checked) {
+          document.body.classList.add('dark');
+          localStorage.theme = 'dark';
+        } else {
+          document.body.classList.remove('dark');
+          localStorage.theme = 'light';
+        }
+      });
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    };
   </script>
 </body>
 </html>
