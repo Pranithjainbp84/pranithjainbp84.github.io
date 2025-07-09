@@ -10,14 +10,28 @@
   <!-- Material Web Components -->
   <script type="module" src="https://cdn.jsdelivr.net/npm/@material/web@1.0.0/dist/material-web.min.js"></script>
   <style>
-    .material-symbols-outlined {font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; vertical-align:middle;}
-    :root {--primary:#6750a4;--on-primary:#ffffff;--primary-container:#eaddff;--on-primary-container:#21005d;--secondary-container:#e8def8;--on-secondary-container:#1d192b;--surface:#fef7ff;--on-surface:#1c1b1f;--surface-variant:#e7e0ec;--on-surface-variant:#49454f;--outline:#79747e;--bg:var(--surface);--card-bg:#ffffff;--link:var(--primary);}
-    body.dark {--primary:#d0bcff;--on-primary:#381e72;--primary-container:#4f378b;--on-primary-container:#eaddff;--secondary-container:#4a4458;--on-secondary-container:#e8def8;--surface:#1c1b1f;--on-surface:#e6e1e5;--surface-variant:#49454f;--on-surface-variant:#cac4d0;--outline:#938f99;--bg:var(--surface);--card-bg:#2b2930;--link:var(--primary);}
+    .material-symbols-outlined {
+      font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+      vertical-align:middle;
+      transition: color .2s;
+      color: var(--primary);
+    }
+    :root {
+      --primary:#6750a4;--on-primary:#fff;--primary-container:#eaddff;--on-primary-container:#21005d;
+      --secondary-container:#e8def8;--on-secondary-container:#1d192b;
+      --surface:#fef7ff;--on-surface:#1c1b1f;--surface-variant:#e7e0ec;--on-surface-variant:#49454f;
+      --outline:#79747e;--bg:var(--surface);--card-bg:#fff;--link:var(--primary);
+    }
+    body.dark {
+      --primary:#d0bcff;--on-primary:#381e72;--primary-container:#4f378b;--on-primary-container:#eaddff;
+      --secondary-container:#4a4458;--on-secondary-container:#e8def8;
+      --surface:#1c1b1f;--on-surface:#e6e1e5;--surface-variant:#49454f;--on-surface-variant:#cac4d0;
+      --outline:#938f99;--bg:var(--surface);--card-bg:#2b2930;--link:var(--primary);
+    }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--on-surface);transition:background .3s,color .3s;line-height:1.6;}
-    a{color:var(--link);text-decoration:none;}
-    a:hover{text-decoration:underline;}
+    a{color:var(--link);text-decoration:none;}a:hover{text-decoration:underline;}
     nav{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--outline);z-index:1000;}
     body.dark nav{background:rgba(28,27,31,.8);}
     .nav-container{max-width:1140px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;}
@@ -27,7 +41,7 @@
     .nav-links a:hover{background:var(--secondary-container);}
     .hamburger{display:none;flex-direction:column;gap:.25rem;cursor:pointer;}
     .hamburger span{width:24px;height:2px;background:var(--on-surface);transition:.3s;}
-    .theme-toggle{cursor:pointer;display:flex;align-items:center;}
+    .theme-toggle{cursor:pointer;display:flex;align-items:center;background:none;border:none;padding:0;}
     header{background:linear-gradient(135deg,var(--primary)0%,var(--primary-container)100%);color:var(--on-primary);text-align:center;padding:9rem 1rem 6rem;clip-path:ellipse(150% 100% at 50% 0%);}
     header h1{font-size:clamp(2.6rem,5vw,3.6rem);margin-bottom:.5rem;}
     header p{font-size:1.15rem;max-width:760px;margin:0 auto;}
@@ -40,12 +54,48 @@
     #about p{max-width:800px;margin:auto;}
     .skills{display:flex;flex-wrap:wrap;gap:.5rem;}
     .chip{display:inline-flex;align-items:center;gap:.25rem;background:var(--secondary-container);color:var(--on-secondary-container);padding:.35rem .75rem;border-radius:9999px;font-size:.85rem;}
-    .timeline{border-left:2px solid var(--primary);padding-left:1rem;}
-    .timeline-item{margin-bottom:1.5rem;position:relative;}
-    .timeline-item::before{content:'';position:absolute;left:-9px;top:6px;width:10px;height:10px;background:var(--primary);border-radius:50%;}
-    .timeline-item h3{font-size:1.05rem;margin-bottom:.2rem;}
-    .timeline-item p{font-size:.9rem;color:var(--on-surface-variant);margin:0 .5rem 1rem 0;}
-    .timeline-item span{font-size:.85rem;color:var(--on-surface-variant);}
+    /* --- Improved Timeline --- */
+    .timeline{
+      border-left: 3px solid var(--primary);
+      padding-left: 2.2rem;
+      position: relative;
+    }
+    .timeline-item{
+      margin-bottom:2rem;
+      position:relative;
+      padding-left:0;
+    }
+    .timeline-item::before{
+      content:'';
+      position:absolute;
+      left:-2.1rem;
+      top: 0.65rem;
+      width:0.82rem;
+      height:0.82rem;
+      background:var(--primary);
+      border-radius:50%;
+      border:2.5px solid var(--primary-container);
+      box-sizing:border-box;
+      z-index:1;
+    }
+    .timeline-item h3{
+      font-size:1.13rem;
+      margin-bottom:.32rem;
+      font-weight:700;
+      line-height:1.35;
+      padding-left:0;
+    }
+    .timeline-item span{
+      font-size:1rem;
+      color:var(--on-surface-variant);
+      margin-bottom:.4rem;
+      display:block;
+      margin-left:0;
+    }
+    .timeline-item ul{
+      margin-left:1.2rem;list-style:disc;
+      font-size:1.12rem;
+    }
     .list{list-style:disc inside;}
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
     .project-card{background:var(--card-bg);border-radius:1rem;padding:1rem;box-shadow:0 3px 6px rgba(0,0,0,.06);display:flex;flex-direction:column;gap:.6rem;transition:transform .2s,box-shadow .2s;}
@@ -55,30 +105,43 @@
     .project-card a{font-weight:600;}
     .contact-info{display:flex;flex-direction:column;gap:.8rem;font-size:.95rem;}
     .contact-info a{display:inline-flex;align-items:center;gap:.3rem;}
+    .resume-btn{
+      display:inline-flex;align-items:center;gap:.5rem;
+      padding:.75rem 1.2rem;
+      background:var(--primary);color:var(--on-primary);
+      border-radius:.7rem;font-weight:600;
+      box-shadow:0 2px 6px rgba(80,40,160,.08);
+      font-size:1.08rem;
+      margin-top:1.5rem;
+      transition:background .2s;
+    }
+    .resume-btn:hover{background:var(--primary-container);color:var(--on-primary-container);}
     footer{text-align:center;padding:2.5rem 1rem;background:var(--primary-container);color:var(--on-primary-container);display:flex;flex-direction:column;gap:1rem;align-items:center;}
     body.dark footer{background:#312f36;color:var(--on-surface-variant);}
+    @media(max-width:1100px){
+      .nav-container, main { max-width: 98vw;}
+    }
     @media(max-width:768px){
       .nav-links{position:absolute;top:64px;left:0;width:100%;flex-direction:column;background:var(--bg);padding:1rem 0;display:none;}
       .nav-links.show{display:flex;}
       .hamburger{display:flex;}
+      .timeline{padding-left:1.3rem;}
+      .timeline-item::before{left:-1.3rem;}
     }
-    /* Mobile enhancements */
     @media(max-width:480px){
-      /* Single-column project cards */
       .projects-grid { grid-template-columns: 1fr !important; }
-      /* Horizontal scroll for skills chips */
       .skills { overflow-x: auto; padding-bottom: 0.5rem; }
-      /* Full-width buttons */
       .cta md-filled-tonal-button { width: 100%; }
-      /* Centered contact links */
       .contact-info a { width: 100%; padding: 0.5rem 0; justify-content: center; }
-      /* Reduce section padding */
       main { padding: 2rem 0.5rem; }
       header { padding: 6rem 1rem 4rem; }
-    }.nav-links.show{display:flex;}.hamburger{display:flex;}}
+      .timeline{padding-left:1rem;}
+      .timeline-item::before{left:-1rem;}
+    }
   </style>
 </head>
 <body>
+  <!-- NAVIGATION & HEADER -->
   <nav>
     <div class="nav-container">
       <div class="nav-brand"><span class="material-symbols-outlined">verified_user</span>Pranith Jain</div>
@@ -91,10 +154,11 @@
         <a href="#certifications"><span class="material-symbols-outlined">grade</span>Certifications</a>
         <a href="#projects"><span class="material-symbols-outlined">folder</span>Projects</a>
         <a href="#contact"><span class="material-symbols-outlined">alternate_email</span>Hire Me</a>
-        <a href="https://app.rezi.ai/s/pranithjain" target="_blank"><span class="material-symbols-outlined">description</span>Resume</a>
       </div>
       <div style="display:flex;align-items:center;gap:.8rem;">
-        <div class="theme-toggle" id="themeToggle"><span class="material-symbols-outlined">dark_mode</span></div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
+        </button>
         <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
       </div>
     </div>
@@ -107,7 +171,7 @@
   <main>
     <section id="about">
       <h2>About</h2>
-      <p>I believe security shouldn’t merely put out fires—it should fuel growth. That conviction has guided my journey leading MailOps & Email Deliverability at Qubit Capital, where I optimize outreach-domain email deliverability to ensure 500+ investor outreach domains consistently land in recipients’ primary tab. Alongside email operations, I spearhead <strong>Cloud Security</strong> initiatives, implementing GCP IAM policies, enforcing zero-trust controls, and automating vulnerability assessments to secure cloud workloads and infrastructure.</p>
+      <p>I believe security shouldn’t merely put out fires—it should fuel growth. That conviction has guided my journey leading MailOps & Email Deliverability at Qubit Capital, where I optimize outreach-domain email deliverability to ensure 500+ investor outreach domains consistently land in recipients’ primary tab. Alongside email operations, I spearhead Cloud Security initiatives, implementing GCP IAM policies, enforcing zero-trust controls, and automating vulnerability assessments to secure cloud workloads and infrastructure.</p>
     </section>
     <section id="skills">
       <h2>Skills</h2>
@@ -119,6 +183,7 @@
         <span class="chip"><span class="material-symbols-outlined">mail</span>Email Deliverability</span>
         <span class="chip"><span class="material-symbols-outlined">integration_instructions</span>GCP IAM & 2FA</span>
         <span class="chip"><span class="material-symbols-outlined">code</span>Python, Bash, SQL</span>
+        <span class="chip"><span class="material-symbols-outlined">code</span>Vibe Coding</span>
       </div>
     </section>
     <section id="experience">
@@ -226,31 +291,41 @@
         <a href="mailto:pranithjainbp84@gmail.com"><span class="material-symbols-outlined">mail</span>pranithjainbp84@gmail.com</a>
         <a href="https://www.linkedin.com/in/pranithjain" target="_blank"><span class="material-symbols-outlined">launch</span>linkedin.com/in/pranithjain</a>
       </div>
+      <div style="text-align:center;">
+        <a href="https://app.rezi.ai/s/pranithjain" target="_blank" class="resume-btn">
+          <span class="material-symbols-outlined" style="font-size:1.3em;">description</span>
+          View Resume
+        </a>
+      </div>
     </section>
   </main>
   <footer>
     <p>© <span id="year"></span> Pranith Jain • Built with Material You & hosted on GitHub Pages</p>
   </footer>
   <script>
-    window.onload = function() {
-      document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('show'));
-      const switchEl = document.getElementById('modeSwitch');
-      if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.body.classList.add('dark');
-        switchEl.checked = true;
-      }
-      switchEl.addEventListener('change', () => {
-        if (switchEl.checked) {
-          document.body.classList.add('dark');
-          localStorage.theme = 'dark';
-        } else {
-          document.body.classList.remove('dark');
-          localStorage.theme = 'light';
-        }
-      });
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-    };
+    // Hamburger menu
+    document.getElementById('hamburger').addEventListener('click', () =>
+      document.getElementById('navLinks').classList.toggle('show')
+    );
+    // Theme toggle
+    const btn = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    function setTheme(dark) {
+      document.body.classList.toggle('dark', dark);
+      localStorage.theme = dark ? 'dark' : 'light';
+      icon.textContent = dark ? 'light_mode' : 'dark_mode';
+      icon.style.color = getComputedStyle(document.body).getPropertyValue('--primary');
+    }
+    (function () {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const dark = localStorage.theme === 'dark' || (!localStorage.theme && prefersDark);
+      setTheme(dark);
+    })();
+    btn.addEventListener('click', () => {
+      setTheme(!document.body.classList.contains('dark'));
+    });
+    // Set dynamic year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
